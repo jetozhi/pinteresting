@@ -79,4 +79,13 @@ Pinteresting::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   #Note to set this to your actual host 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config/environments/production.rb - This set to use paperclip to heroku
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  }
+}
 end
