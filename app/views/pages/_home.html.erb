@@ -1,11 +1,7 @@
 <div class="jumbotron container-fluid center">	
 	<h1 id="welcome">Welcome to my App!</h1>
-	<% if user_signed_in? %>
-		#do something
-	<% else %>
 	<p id="buttons">
 		<%= link_to"Log in", new_user_session_path, class: "btn btn-default btn-lg" %> 
 		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-danger btn-lg" %>
 	</p>
-	<% end %>
 </div>

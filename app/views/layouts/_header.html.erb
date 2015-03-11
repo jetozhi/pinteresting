@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Pintresting", pins_path, class: "navbar-brand" %>
+      <%= link_to "Pintresting", root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,8 +21,11 @@
       <% if user_signed_in? %>
         <li><%= link_to "Account", edit_user_registration_path %> 
         <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-        <li><%= link_to 'New Pin', new_pin_path %></li>
-      <% else %>
+        <li><%= link_to new_pin_path do %>
+          <span class="glyphicon glyphicon-plus"></span>New Pin
+          <% end %>  
+        </li>
+        <% else %>
         <li><%= link_to "Sign In", new_user_session_path %></li>
       <% end %>
       </ul>
